@@ -49,6 +49,15 @@ header {
    justify-content: space-between;
    font-size: 24px;
 }
+.wrapper{
+   display: grid;
+   min-height: 100vh;
+   grid-template: minmax(100px, auto) 1fr minmax(70px, auto) / 1fr;
+   grid-template-areas:
+      "header"
+      "main"
+      "footer";
+}
 .container {
    width: 100%;
    max-width: 1180px;
@@ -64,6 +73,23 @@ header {
 /*.content-wrapper__container{
    background-color: #c4c4c449;
 }*/
+
+.header {
+   grid-area: header;
+   /*display: grid;
+   grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;*/
+}
+.header__menu {
+   grid-column: 3 / 4;
+}
+.header__list {
+   display: grid;
+   grid-auto-flow: column;
+   justify-items: end;
+   /* justify-content: end; */
+}
+
+
 .header__nav {
    display: flex;
    align-items: center;
@@ -90,6 +116,78 @@ header {
 }
 .header__logo:not(:hover) {
    transition: 1s;
+}
+
+
+/* соц сети хэдер */
+
+.header__logo-call{
+   display: inline-block;
+   position: relative;
+   transition: 0.2s linear;
+}
+.header__logo-call:hover{
+   transition: all 0.4s ease 0s;
+   transform: skew(-20deg, 20deg);
+}
+.header__logo-call:not(:hover) {
+   transition: 0.8s;
+}
+
+.header__logo-vk{
+   display: inline-block;
+   position: relative;
+   transition: 0.2s linear;
+}
+.header__logo-vk:hover {
+   transition: all 0.4s ease 0s;
+   transform: scaleX(-1);
+}
+.header__logo-vk:not(:hover) {
+   transition: 0.8s;
+}
+
+.header__logo-whatsapp{
+   display: inline-block;
+   position: relative;
+   transition: 0.2s linear;
+}
+.header__logo-whatsapp:hover {
+   transform: scale(1.2, 0.5);
+   transition: all 0.4s ease 0s;
+}
+.header__logo-whatsapp:not(:hover) {
+   transition: 0.8s;
+}
+
+.header__logo-viber{
+   display: inline-block;
+   position: relative;
+   left: 0;
+   transition: 0.5s linear;
+}
+.header__logo-viber:hover {
+   transition: all 1s ease 0s;
+   transform: rotate(540deg);
+}
+.header__logo-viber:not(:hover) {
+   transition: 0.8s;
+}
+
+
+
+
+.menu__item-telephone{
+   font-style: italic;
+   letter-spacing: 1px;
+   transform:rotate(10deg);
+}
+.menu__item-telephone:hover{
+   color: rgb(95, 95, 95);
+   transition: all 0.3s ease;
+}
+.menu__item:not(:hover) {
+   transition: 0.5s;
 }
 .menu__item:hover {
    color: rgb(95, 95, 95);
@@ -140,6 +238,8 @@ header {
    color: #15191D;
    padding-top: 230px;
 }
+
+/*анимированные соц сети*/
 
 .vk{
    margin: 0 25px 0 0;
@@ -194,43 +294,9 @@ header {
 .viber:not(:hover) {
    transition: 0.5s;
 }
-.close {
-   cursor: pointer;
-   position: relative;
-   display: flex;
-   justify-content: flex-end;
-   top: -35px;
-   left: 13px;
-   height: 40px;
-}
-input {
-   border: 2px solid #000;
-   margin-bottom: 20px;
-   height: 30px;
-}
-.button {
-   border-radius: 10px;
-   color: white;
-   background-color: black;
-   height: 50px;
-   width: 60%;
-   font-size: 20px;
-}
-h1,
-h2,
-h3 {
-   font-weight: bold;
-}
-h3 {
-   font-size: 30px;
-}
-.photo__main {
-   max-width: 1200px;
-   max-height: 3200px;
-}
 
 /*кнопка вызова*/
-.shine-button {
+/*.shine-button {
    text-decoration: none;
    display: inline-block;
    padding: 10px 30px;
@@ -260,7 +326,7 @@ h3 {
 .shine-button:hover:before {
    left: 150px;
    transition: .5s ease-in-out;
-}
+}*/
 
 .main__content {
    grid-area: main;
@@ -338,6 +404,7 @@ h3 {
 
 .main__items {
    display: grid;
+   gap: 10px;
    grid-auto-flow: row;
    padding: 15px 0;
    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -483,6 +550,28 @@ body.fixed-pade {
    font-size: 40px;
    margin: 0px 0px 1em 0px;
 }
+.popup__main-content{
+   display: flex;
+}
+.popup__text{
+   padding-left: 30px;
+}
+.menu__item-photo {
+   padding: 0px 0px 50% 0px;
+   position: relative;
+}
+.menu__item-photo img {
+   width: 100%;
+   /*height: 100%;*/
+   height: 50%;
+   position: absolute;
+   left: 0;
+   top: 0;
+   object-fit: cover;
+}
+
+
+/*анимация*/
 
 @keyframes waves {
    0% {
@@ -516,199 +605,37 @@ body.fixed-pade {
       transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
    }
 }
+/* ================ */
+/*настройка разрешений*/
 
-@media (max-width: 1142px) {
-   #okno {
-      width: 450px;
-      height: 300px;
+@media (min-width: 800px) {
+   .big__item {
+      grid-column: span 2;
+      grid-row: span 2;
    }
 }
-@media (max-width: 729px) {
-   #okno {
-      width: 350px;
-      height: 300px;
+@media (min-width: 992px) {
+   .main-content {
+      grid-area: main;
+      display: grid;
+   }
+   .main-content {
+      grid-column: 3 / 4;
    }
 }
-@media (max-width: 420px) {
-   #okno {
-      width: 300px;
-      height: 420px;
-   }
-   .input {
-      margin-top: 5px;
-   }
-   .input__active {
-      height: 70px;
-      width: 220px;
-   }
-}
-@media (max-width: 746px) {
-}
-@media (max-width: 874px) {
-   .photo__main {
-      max-width: 900px;
-      max-height: 900px;
-   }
-   .menu-burger__header {
-      position: relative;
-      width: 40px;
-      height: 35px;
-      display: block;
-      margin-left: 10px;
-   }
-   .menu-burger__header span,
-   .menu-burger__header:after,
-   .menu-burger__header:before {
-      height: 3px;
-      width: 100%;
-      position: absolute;
-      background: #515758;
-      margin: 0 auto;
-   }
-   .menu-burger__header span {
-      top: 16px;
-   }
-   .menu-burger__header:after,
-   .menu-burger__header:before {
-      content: "";
-   }
-   .menu-burger__header:after {
-      bottom: 5px;
-      transition: all 0.4s ease 0s;
-   }
-   .menu-burger__header:before {
-      top: 5px;
-      transition: all 0.4s ease 0s;
-   }
-   .header__nav {
-      display: block;
-      position: absolute;
-      top: 55px;
-      left: 0;
-      background: rgb(245, 246, 246);
-      box-shadow: #ccc;
-      width: 100%;
-      box-shadow: 0 4px 2px -2px rgba(36, 36, 36, 0.17);
-      left: -100%;
-      transition: all 0.5s ease;
-   }
-   .header__nav.open-menu {
-      left: 0%;
-   }
-   .header__menu {
-      display: block;
-   }
-   .header__menu li {
-      margin: 40px 0px 40px 33px;
-      font-size: 14px;
-   }
-   .menu-burger__header.open-menu span {
-      opacity: 0;
-      transition: all 0.4s ease 0s;
-   }
-   .menu-burger__header.open-menu:before {
-      transform: rotate(38deg);
-      top: 16px;
-      transition: all 0.4s ease 0s;
-   }
-   .menu-burger__header.open-menu:after {
-      transform: rotate(-38deg);
-      bottom: 16px;
-      transition: all 0.4s ease 0s;
-   }
-   .fixed-page {
-      overflow: hidden;
-   }
-   .email {
-      margin-top: 0px;
-      padding: 0px;
-      display: inline-block;
-      color: indianred;
-      background-color: rgb(245, 246, 246);
-      font-family: "Roboto", Helvetica;
-      font-size: 16px;
-   }
-}
-@media (max-width: 1160px) {
-   .header__logo {
+@media (max-width: 767px) {
+   .header__logo{
       display: none;
    }
-}
-@media (max-width: 1202px) {
-   .photo__main {
-      max-width: 1280px;
-      max-height: 1000px;
+   .header__menu{
+      padding-left: 20px;
+   }
+   .header__contac{
+      padding-right: 20px;
    }
 }
-@media (max-width: 932px) {
-   .photo__main {
-      max-width: 930px;
-      max-height: 900px;
-   }
-}
-@media (max-width: 852px) {
-   .photo__main {
-      max-width: 880px;
-      max-height: 800px;
-   }
-}
-@media (max-width: 752px) {
-   .photo__main {
-      max-width: 700px;
-      max-height: 650px;
-   }
-}
-@media (max-width: 642px) {
-   .photo__main {
-      max-width: 550px;
-      max-height: 500px;
-   }
-}
-@media (max-width: 482px) {
-   .photo__main {
-      max-width: 480px;
-      max-height: 400px;
-   }
-}
-@media (max-width: 382px) {
-   .photo__main {
-      max-width: 380px;
-      max-height: 300px;
-   }
-}
-@media (max-width: 1181px) {
-   .photo__group {
-      max-width: 600px;
-      max-height: 500px;
-   }
-}
-@media (max-width: 639px) {
-   .photo__group {
-      max-width: 500px;
-      max-height: 450px;
-   }
-}
-@media (max-width: 541px) {
-   .photo__group {
-      max-width: 400px;
-      max-height: 350px;
-   }
-}
-@media (max-width: 443px) {
-   .photo__group {
-      max-width: 280px;
-      max-height: 230px;
-   }
-}
-@media (max-width: 583px) {
-   .photo__second {
-      max-width: 350px;
-      max-height: 300px;
-   }
-}
-@media (max-width: 383px) {
-   .photo__second {
-      max-width: 300px;
-      max-height: 250px;
+@media (max-width: 880px) {
+   .header__social{
+      display: none;
    }
 }
