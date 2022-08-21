@@ -214,6 +214,10 @@ header {
    min-width: 100vh;
    background: url("../img/background5.jpg") top / cover no-repeat; 
 }
+.contacts-headline{
+   font-size: 36px;
+   padding-bottom: 10px;
+}
 .content-under-contacts{
    margin-bottom: 20px;
    padding-top: 200px;
@@ -227,7 +231,7 @@ header {
    font-size: 24px;
    padding-bottom: 5px;
 }
-.content-icons{
+.content-icons:not(:last-child){
    padding-top: 20px;
    margin: 10px 0 10px 0;
 }
@@ -399,7 +403,7 @@ header {
    position: absolute;
    top: 0;
    left: 0;
-   object-fit: cover;
+   object-fit:cover;
 }
 
 .main__items {
@@ -425,6 +429,17 @@ header {
    object-fit: cover;
    width: 100%;
    height: 100%;
+}
+
+.headline{
+   padding: 50px 0px 15px 0px;
+   font-size: 36px;
+   letter-spacing: -1.5px;
+   /*font-style: oblique;*/
+}
+.list-video video{
+   max-height: 50%;
+   padding-right: 25px;
 }
 
 /* волнистая кнопка */
@@ -521,6 +536,9 @@ body.fixed-pade {
    opacity: 1;
    visibility: visible;
 }
+.product__img{
+   
+}
 
 .popup__body {
    min-height: 100%;
@@ -552,9 +570,37 @@ body.fixed-pade {
 }
 .popup__main-content{
    display: flex;
+   flex-wrap: wrap;
+}
+.popup-headline{
+   display: flex;
+   flex-direction: column;
+}
+.popup-headline__text p{
+   padding-top: 15px;
+   font-style: italic;
 }
 .popup__text{
-   padding-left: 30px;
+   padding: 15px 30px 0px 0px;
+}
+.ingredient{
+   font-size: 28px;
+}
+.recipe{
+   font-size: 32px;
+   padding: 15px 0px 0px 0px;
+}
+.remark{
+   padding: 15px 0px 0px 0px;
+   font-style: oblique;
+}
+.popup__img{
+   display: flex;
+   flex-wrap: wrap;
+}
+.popup__img img{
+   width: 20%;
+   padding-right: 10px;
 }
 .menu__item-photo {
    padding: 0px 0px 50% 0px;
@@ -633,9 +679,35 @@ body.fixed-pade {
    .header__contac{
       padding-right: 20px;
    }
+   
 }
 @media (max-width: 880px) {
    .header__social{
       display: none;
    }
+   .content-under-contacts{
+      max-width: 350px;
+      margin: 0px auto;
+   }
+   .contacts-headline{
+      text-align: center;
+      font-size: 64px;
+   }
+   .content-text {
+      text-align: center;
+   }
+   .content-icons{
+      display: flex;
+      justify-content: center;
+   }
+   .content-button{
+      display: flex;
+      justify-content: center;
+   }
+}
+@media (min-width: 376px) and (max-width: 780px){
+   .last-item{
+      display: none;
+   }
+   
 }
