@@ -1,5 +1,5 @@
-export default function Drinks() {
-    return (
-        <div>Drinks</div>
-    )
-}
+import {Drinks} from "@/pages/drinks";
+
+const DrinksPage = () => <Drinks/>
+
+export default DrinksPage;
