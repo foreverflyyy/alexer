@@ -10,7 +10,7 @@ interface DrinkItemProps {
 export const DrinkItem = ({ item }: DrinkItemProps) => {
 
     return (
-        <Link className={styles.item} href={`drink/${item?.id}`}>
+        <Link className={styles.item} href={`/drink/${item?.id}`}>
             <div className={styles.imageWrapper}>
                 {item?.name && (
                     <Image

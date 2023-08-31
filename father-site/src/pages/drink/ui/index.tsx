@@ -1,8 +1,10 @@
 import { NextSeo } from 'next-seo';
+import {drinks} from "@/shared/data/drinks";
 import { MainSection } from './main-section';
 import { SimilarDrinks } from './similar-drinks';
 import {useMemo} from "react";
-import {drinks} from "@/shared/data/drinks";
+import {Photos} from "./photos";
+import {Recipe} from "./recipe";
 
 export const DrinkPage = ({id}: {id: string}) => {
 
@@ -28,7 +30,9 @@ export const DrinkPage = ({id}: {id: string}) => {
                     ],
                 }}
             />
-            <MainSection drink={drinkInfo!} />
+            <MainSection drink={drinkInfo!}/>
+            <Photos drink={drinkInfo!}/>
+            <Recipe drink={drinkInfo!}/>
             <SimilarDrinks/>
         </>
     );

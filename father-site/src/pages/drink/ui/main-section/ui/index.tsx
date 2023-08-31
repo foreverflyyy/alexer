@@ -12,6 +12,7 @@ export const MainSection = ({drink}: {drink: Drink}) => {
       <div className={clsx('container', styles.container)}>
         <div className={styles.content}>
           <div style={{fontSize: 24}}>{drink?.title}</div>
+          <div style={{fontSize: 16}}>{drink?.description}</div>
         </div>
       </div>
     </section>
