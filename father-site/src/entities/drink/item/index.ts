@@ -1,1 +1,1 @@
-export {DrinkItem} from "./ui"
+export {PoputDrink} from "./ui"

@@ -1,4 +1,4 @@
 export const items = [
     { text: 'Главная', href: "/" },
-    { text: 'Напитки', href: "/ui" },
+    { text: 'Напитки', href: "/drinks" },
 ];

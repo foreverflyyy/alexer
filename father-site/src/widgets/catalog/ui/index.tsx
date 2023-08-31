@@ -1,7 +1,7 @@
 import clsx from 'clsx';
-import { DrinkItem } from '@/entities/drink/item';
+import { DrinkItem } from '@/entities/drink/card';
 import styles from './styles.module.scss';
-import {drinks} from "@/widgets/catalog/data/drinks";
+import {drinks} from "@/shared/data/drinks";
 
 interface CatalogProps {
     title: string;
