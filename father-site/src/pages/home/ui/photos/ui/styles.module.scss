@@ -1,0 +1,86 @@
+.main__items {
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: row;
+  padding: 15px 0;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.main__item {
+  position: relative;
+  display: grid;
+  padding: 10px 0px 85% 0px;
+}
+.big__item {
+  grid-row: 2 span;
+  grid-column: 2 span;
+}
+.main__item img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.headline{
+  padding: 50px 0px 15px 0px;
+  font-size: 36px;
+  letter-spacing: -1.5px;
+  /*font-style: oblique;*/
+}
+
+.section {
+  position: relative;
+  overflow: hidden;
+  margin: 15px 0 20px;
+
+  @media (max-width: 576px) {
+    margin: 0 0 10px;
+  }
+}
+
+.container {
+  max-width: 57%;
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    max-width: 70%;
+  }
+
+  @media (max-width: 768px) {
+    max-width: calc(100% - calc(30px * 2));
+  }
+
+  @media (max-width: 576px) {
+    max-width: calc(100% - calc(18px * 2));
+  }
+}
+
+.slider {
+  width: 100%;
+  overflow: visible;
+}
+
+.slide {
+  width: 100%;
+}
+
+.prevBtn,
+.nextBtn {
+  &[disabled] {
+    opacity: 0;
+    visibility: hidden;
+  }
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.prevBtn {
+  left: 15px;
+}
+
+.nextBtn {
+  right: 15px;
+}

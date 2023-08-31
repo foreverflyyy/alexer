@@ -10,15 +10,9 @@ export const Header = () => {
     return (
         <header className={clsx(styles.header, styles.fixed )}>
             <div className={clsx('container', styles.container)}>
-                <div className={styles.row}>
-                    <Logo />
-                    <Nav/>
-                </div>
-                <div className={styles.row}>
-                    <Burger />
-                </div>
+                <Logo />
+                <Nav/>
             </div>
-            <Menu />
         </header>
     );
 };

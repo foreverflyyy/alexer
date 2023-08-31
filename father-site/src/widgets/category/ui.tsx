@@ -1,6 +1,5 @@
 import clsx from 'clsx';
-import Link from 'next/link';
-import type { ElementType, PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 import { CarouselMultiply, type CarouselMultiplyProps } from '@/shared/ui/carousel-multiply';
 import styles from './styles.module.scss';
 

@@ -4,15 +4,8 @@
   left: 0;
   width: 100%;
   z-index: var(--header-z-index);
-  background-color: var(--color-black);
+  background-color: rgba(0, 0, 0, 0.7);
   transition: transform var(--duration);
-
-  &.fixed {
-
-    @media (max-width: 1024px) {
-      transform: translateX(0%);
-    }
-  }
 }
 
 .container {
