@@ -13,14 +13,17 @@ export const DrinkItem = ({ item }: DrinkItemProps) => {
         <Link className={styles.item} href={`/drink/${item?.id}`}>
             <div className={styles.imageWrapper}>
                 {item?.name && (
-                    <Image
-                        sizes="100%"
-                        fill
-                        quality={100}
-                        className={styles.image}
-                        alt={item?.name ?? ''}
-                        src={`/drinks/${item?.value}/main.jpg`}
-                    />
+                    <>
+                        <Image
+                            sizes="100%"
+                            fill
+                            quality={100}
+                            className={styles.image}
+                            alt={item?.name ?? ''}
+                            src={`/drinks/${item?.value}/main.jpg`}
+                        />
+                        <div className={styles.drink_name}>{item.name}</div>
+                    </>
                 )}
             </div>
         </Link>

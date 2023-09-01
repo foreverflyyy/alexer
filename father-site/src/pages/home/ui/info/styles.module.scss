@@ -1,11 +1,18 @@
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding-top: 30px;
-  padding-bottom: 80px;
 
   @media (max-width: 576px) {
     padding-top: 15px;
     padding-bottom: 70px;
   }
+}
+
+.main_image {
+  height: 300px;
+  width: 300px;
 }
 
 .title {
