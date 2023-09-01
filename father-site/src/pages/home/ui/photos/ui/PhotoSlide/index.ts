@@ -1,1 +1,0 @@
-export {PhotoSlide} from "./ui"
