@@ -2,26 +2,60 @@
   width: 600px;
   height: 600px;
   display: flex;
+
+  @media(max-width: 670px) {
+    width: 450px;
+    height: 450px;
+  }
+
+  @media(max-width: 520px) {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .left {
   display: flex;
   flex-wrap: wrap;
   flex-basis: 400px;
-}
 
-.photo {
-  background-color: red;
+  @media(max-width: 670px) {
+    flex-basis: 300px;
+  }
+
+  @media(max-width: 520px) {
+    flex-basis: 200px;
+  }
 }
 
 .large {
   width: 400px;
   height: 400px;
+
+  @media(max-width: 670px) {
+    width: 300px;
+    height: 300px;
+  }
+
+  @media(max-width: 520px) {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .small {
   width: 200px;
   height: 200px;
+
+  @media(max-width: 670px) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media(max-width: 520px) {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .headline{
