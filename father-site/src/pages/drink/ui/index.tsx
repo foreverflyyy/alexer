@@ -31,9 +31,9 @@ export const DrinkPage = ({id}: {id: string}) => {
                 }}
             />
             <MainSection drink={drinkInfo!}/>
-            <Photos drink={drinkInfo!}/>
             <Recipe drink={drinkInfo!}/>
-            <SimilarDrinks/>
+            <Photos drink={drinkInfo!}/>
+            <SimilarDrinks drink={drinkInfo!}/>
         </>
     );
 };

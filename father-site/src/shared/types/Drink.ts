@@ -4,6 +4,6 @@ export default interface Drink {
     name: string,
     title: string,
     description: string,
-    image: string,
+    images: string[],
     recipe: string
 }

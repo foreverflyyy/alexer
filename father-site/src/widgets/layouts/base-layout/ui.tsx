@@ -1,6 +1,6 @@
 /* eslint-disable boundaries/element-kinds */
 import type { PropsWithChildren } from 'react';
-import { Header } from '@/widgets/layouts';
+import { Header, Footer } from '@/widgets/layouts';
 
 export const BaseLayout = ({ children }: PropsWithChildren) => {
     return (
@@ -9,6 +9,7 @@ export const BaseLayout = ({ children }: PropsWithChildren) => {
             <main className="main">
                 {children}
             </main>
+            <Footer/>
         </>
     );
 };

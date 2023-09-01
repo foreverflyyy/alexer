@@ -22,9 +22,7 @@ export const HomePage = () => (
             }}
         />
         <Info/>
-        <div className={"container"}>
-            <Photos/>
-            <Videos/>
-        </div>
+        <Photos/>
+        <Videos/>
     </>
 );

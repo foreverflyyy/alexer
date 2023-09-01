@@ -1,0 +1,60 @@
+.footer {
+  height: 60px;
+  width: 100%;
+  z-index: var(--header-z-index);
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: transform var(--duration);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: height var(--duration);
+  padding-bottom: 20px;
+
+  @media (max-width: 576px) {
+    height: 90px;
+  }
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 500px) {
+    padding-bottom: 20px;
+  }
+}
+
+.telephone{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.telephone_number{
+  font-size: 24px;
+}
+
+.contacts {
+  display: flex;
+  padding-top: 10px;
+}
+
+.contacts_title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.link {
+  padding-right: 5px;
+}
+
+.link_image {
+
+}

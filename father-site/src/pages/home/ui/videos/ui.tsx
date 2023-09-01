@@ -9,7 +9,7 @@ export const Videos = () => {
             <div className={styles.headline}>Видео:</div>
             <div className={styles.list_videos}>
                 {pathsToVideos.map(path => (
-                    <video controls preload="auto" className={styles.video_item}>
+                    <video key={path} controls preload="auto" className={styles.video_item}>
                         <source src={path} type="video/mp4"/>
                     </video>
                 ))}

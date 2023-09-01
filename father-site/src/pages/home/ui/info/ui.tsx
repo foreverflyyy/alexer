@@ -13,7 +13,7 @@ export const Info = () => (
                     У нас вы можете легко и быстро найти и посмотреть интересующие вас напитки благодаря нашему удобному сайту.
                 </p>
             </div>
-            <Image src={"/mainFace.png"} alt={"main-face"} className={styles.main_image} width={1000} height={1000}/>
+            <Image src={"/mainFace.png"} alt={"main-face"} className={styles.main_image} width={150} height={75}/>
         </div>
     </section>
 );
