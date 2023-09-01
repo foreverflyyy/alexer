@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import styles from "./styles.module.scss"
-import {CarouselMultiply} from "@/shared/ui/carousel-multiply";
-import {processPhotos} from "../config";
-import {PhotoSlide} from "./PhotoSlide";
+import {processLeftPhotos, processRightPhotos} from "../config";
+import Image from "next/image";
+import clsx from "clsx";
 
 export const Photos = () => {
     const [realIndex, setRealIndex] = useState<number>(0);
@@ -10,19 +10,40 @@ export const Photos = () => {
     return (
         <div className={"container"}>
             <div className={styles.headline}>Процесс работы</div>
-            <CarouselMultiply
-                options={{
-                    loop: true,
-                }}
-                className={styles.slider}
-                slideClassName={styles.slide}
-                prevBtnClass={styles.prevBtn}
-                nextBtnClass={styles.nextBtn}
-                items={processPhotos}
-                navigation={false}
-                onSlideChange={(swiper) => setRealIndex(swiper.realIndex)}
-                renderItem={(item, idx) => <PhotoSlide item={item} />}
-            />
+            <div className={styles.container}>
+                <div className={styles.left}>
+                    {processLeftPhotos.map(photo => (
+                        <Image
+                            key={photo.image}
+                            src={photo.image}
+                            alt={photo.needClass}
+                            width={400}
+                            height={400}
+                            className={clsx({
+                                [photo.needClass]: true,
+                                [styles.large]: photo.isBig,
+                                [styles.small]: !photo.isBig
+                            })}
+                        />
+                    ))}
+                </div>
+                <div className={styles.right}>
+                    {processRightPhotos.map(photo => (
+                        <Image
+                            key={photo.image}
+                            src={photo.image}
+                            alt={photo.needClass}
+                            width={400}
+                            height={400}
+                            className={clsx({
+                                [photo.needClass]: true,
+                                [styles.large]: photo.isBig,
+                                [styles.small]: !photo.isBig
+                            })}
+                        />
+                    ))}
+                </div>
+            </div>
         </div>
     );
 };
